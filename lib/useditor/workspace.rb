@@ -29,8 +29,8 @@ module Useditor
     #   image.create
     #
     # @example Creating a new empty image with an optional background color
-    #   100x100 pixels of color B
-    #   image = Useditor::Workspace.create(rows: 100, cols: 100, color: B)
+    #   image = Useditor::Workspace.new
+    #   image.create(rows: 100, cols: 100, color: "B")
     def create(rows: 10, cols: 10, color: "B")
       delete_state
       get_state

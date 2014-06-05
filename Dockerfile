@@ -25,6 +25,7 @@ RUN gem install bundler
 # Add the application to the container (cwd)
 ADD ./ /project
 
+VOLUME ["/project"]
 
 # Bundle install the applications gem dependencies
 RUN bundle install

@@ -5,7 +5,7 @@ require 'useditor/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "useditor"
-  spec.version       = Envy::VERSION
+  spec.version       = Useditor::VERSION
   spec.authors       = ["stratmm"]
   spec.email         = ["mark@stratmann.me.uk"]
   spec.description   = %q{The USEditor project.}
@@ -33,4 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "codeclimate-test-reporter"
   spec.add_development_dependency 'coveralls'
+  spec.add_development_dependency 'pry'
 end

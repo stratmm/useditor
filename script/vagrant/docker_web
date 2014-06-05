@@ -1,0 +1,2 @@
+#!/bin/bash
+docker run --name=web_run --volume=/vagrant:/project --tty=true --interactive=true --detach=false --rm=true web $@

@@ -1,0 +1,13 @@
+#!/bin/bash
+cd /vagrant
+echo Starting required service containers
+export HOST_NAME=192.168.56.30
+
+# Stop and remove all containers
+script/vagrant/docker_clean
+
+# login to docker index
+script/vagrant/docker_login
+
+# Start etcd
+echo "All services started"

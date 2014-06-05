@@ -17,3 +17,4 @@ test/version_tmp
 tmp
 .coveralls.yml
 test.env
+workspace.json

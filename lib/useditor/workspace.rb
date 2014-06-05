@@ -39,6 +39,7 @@ module Useditor
       @image = Array.new(rows) do
         Array.new(cols) { color }
       end
+      save_state
       self
     end
 

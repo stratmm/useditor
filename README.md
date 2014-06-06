@@ -5,7 +5,7 @@
 
 This gem is the submission for a technical test.  It provides a command line utility that demonstrates a small number of image handing concepts.  The setter of the test will be fully aware of the criteria.
 
-# Vagrant => Docker based Development Environment
+# Vagrant / Docker based Development Environment
 The development environment for this project is based on two key components:
 
 The project is hosted in a Virtual Box Vagrant VM.  The Vagrantfile provisions a vanilla Ubuntu 14.04 trusty host and installs Docker.

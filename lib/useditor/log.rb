@@ -8,7 +8,7 @@ module Useditor
   # from various messages types in an appropriate color.
   #
   # @example Sending a log message
-  #   Useditor::Log.fatal "My fatal error is", eexception.class.name
+  #   Useditor::Log.fatal "My fatal error is", exception.class.name
   class Log
 
 

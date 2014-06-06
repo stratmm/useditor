@@ -4,12 +4,12 @@ require 'useditor/log'
 
 describe Useditor::Log do
 
-  it { Useditor::Log.should respond_to(:debug) }
-  it { Useditor::Log.should respond_to(:error) }
-  it { Useditor::Log.should respond_to(:info) }
-  it { Useditor::Log.should respond_to(:warn) }
-  it { Useditor::Log.should respond_to(:fatal) }
-  it { Useditor::Log.should respond_to(:ok) }
+  it { expect(Useditor::Log).to respond_to(:debug) }
+  it { expect(Useditor::Log).to respond_to(:error) }
+  it { expect(Useditor::Log).to respond_to(:info) }
+  it { expect(Useditor::Log).to respond_to(:warn) }
+  it { expect(Useditor::Log).to respond_to(:fatal) }
+  it { expect(Useditor::Log).to respond_to(:ok) }
 
   describe "return value of #format_msg" do
 
@@ -31,7 +31,7 @@ describe Useditor::Log do
     let(:type) { :fatal }
 
     it "should retrieve the correct color for a message" do
-      Useditor::Log.should_receive(:color_fatal).with(message)
+      expect(Useditor::Log).to receive(:color_fatal).with(message)
       Useditor::Log.color(message, type)
     end
 

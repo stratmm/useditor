@@ -85,7 +85,7 @@ describe Useditor::Workspace do
       end
 
       it "can be logged out" do
-        Useditor::Log.should_receive(:ok).exactly(4).times
+        expect(Useditor::Log).to receive(:ok).exactly(4).times
         subject.log_out
       end
 

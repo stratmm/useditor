@@ -28,6 +28,7 @@ The Vagrant provision will do the following:
 * install docker
 * build the Useditor docker container.
 
+This process may take some time depending on your computer and internet connection; go make a coffee.
 ### Accessing the VM
 To use the VM you should
 ```

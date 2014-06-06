@@ -13,7 +13,7 @@ The project is hosted in a Virtual Box Vagrant VM.  The Vagrantfile provisions a
 Docker containers are used to run any supporting services and the development project itself.  This project was taken from one of my own larger systems and therefore contains all the plumbing to host service containers which would typincally be systems like ElasticSearch, MYSQL and so on.  None of these are required here, therefore the only continer is use is the Useditor gem itself.
 
 ## Setting up the development environment
-Ensure you have Vangrant and Virtual box installed with recent version.
+Ensure you have Vangrant and Virtual box installed with recent versions.
 
 Clone thos repo into a folder
 

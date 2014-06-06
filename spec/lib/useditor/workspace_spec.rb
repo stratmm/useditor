@@ -83,6 +83,26 @@ describe Useditor::Workspace do
           ["W", "W", "W", "W"]
         ]
       end
+
+      it "can be logged out" do
+        Useditor::Log.should_receive(:ok).exactly(4).times
+        subject.log_out
+      end
+
+    end
+
+    context "An all black image" do
+      subject { Useditor::Workspace.new.create(rows: 4, cols: 4, color: "B") }
+      it "can be cleared to white" do
+        subject.clear
+        expect(subject.image).to eql [
+          ["W", "W", "W", "W"],
+          ["W", "W", "W", "W"],
+          ["W", "W", "W", "W"],
+          ["W", "W", "W", "W"]
+        ]
+      end
+
     end
   end
 end

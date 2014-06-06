@@ -1,3 +1,6 @@
+require 'useditor/log'
+require 'json'
+
 module Useditor
   # The {Useditor::Workspace} class handles the working storage of the image
   # being manipulated as well as providing the image manipulation functions.
@@ -43,6 +46,17 @@ module Useditor
       self
     end
 
+    # Outputs the current image to the Log
+    def log_out
+      @image.each do |row|
+          Useditor::Log.ok row.join('')
+      end
+    end
+
+    # Clears the current image setting all pixels to W
+    def clear
+      create rows: @rows, cols: @cols, color: "W"
+    end
 
     private
 

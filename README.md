@@ -59,6 +59,3 @@ Running ```rspec``` will execute the test suite.
 
 The project folder on your host is also shared with the container, therefore source changes made on your host will immediatly be reflected in the container.
 
-
-## Installation
-The Vagrantfile will build and provision a server to host etcd, ```vagrant up``` should create the development server

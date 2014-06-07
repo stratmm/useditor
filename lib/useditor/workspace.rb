@@ -115,7 +115,41 @@ module Useditor
       draw_horizontal(row: row, start_col: col, end_col: col, color: color)
     end
 
+    # Get pixels that are adjacent to the target pixel and are of the same color
+    #
+    # @example
+    #   image.get_region(row: 5, col: 5)
+    # @return [Array] Return an array of all pixels in the region
+    #   [{row: 1, col: 1}, {row: 1, col: 2}, {row: 2, col: 1}]
+    def get_region(row: 0, col: 0)
+
+    end
+
+    # Get all pixels that are adjacent to the target pixel and of the same color
+    #
+    # @example
+    #   image.get_mates(row: 5, col: 5)
+    # @return [Array] Return an array of all adjacent pixels of the same color
+    #   [{row: 1, col: 1}, {row: 1, col: 2}, {row: 2, col: 1}]
+    def get_mates(row: 0, col: 0)
+    end
+
+    # Get the color of a single pixle
+    #
+    # @example
+    #   image.get_pixel(row: 5, col: 6, color: "Q")
+    #
+    # @return [String] The pixel's color
+    def get_pixel(row: 0, col: 0, color: "W")
+      throw ArgumentError.new("Row out of bounds") if row < 0 || row > @rows
+      throw ArgumentError.new("Col out of bounds") if col < 0 || col > @cols
+
+      @image[row][col]
+    end
+
     private
+
+
 
     def get_state
       if File.exists?(@state_file)

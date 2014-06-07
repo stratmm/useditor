@@ -124,6 +124,10 @@ describe Useditor::Workspace do
       ]
     end
 
+    it "draw vertical can cope with stupid values" do
+      expect {subject.draw_vertical(col: 20, start_row: 20, end_row: 40, color: "P")}.not_to raise_error(Exception)
+    end
+
     it "can draw horizontal line" do
       subject.draw_horizontal(row: 2, start_col: 2, end_col: 8, color: "P")
       expect(subject.image).to eql [
@@ -140,6 +144,10 @@ describe Useditor::Workspace do
       ]
     end
 
+    it "draw horizontal can cope with stupid values" do
+      expect {subject.draw_horizontal(row: 20, start_col: 20, end_col: 40, color: "P")}.not_to raise_error(Exception)
+    end
+
     it "can set a single pixel" do
       subject.set_pixel(row: 5, col: 5, color: "P")
       expect(subject.image).to eql [
@@ -154,6 +162,104 @@ describe Useditor::Workspace do
         ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
         ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"]
       ]
+    end
+  end
+
+  context "Manipulating Regions" do
+    subject { Useditor::Workspace.new.create }
+    before :each do
+      subject.draw_horizontal(row: 4, start_col: 0, end_col: 9, color: "X")
+      subject.draw_vertical(col: 4, start_row: 0, end_row: 9, color: "X")
+    end
+
+    it "have got the cross" do
+      expect(subject.image).to eql [
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"]
+      ]
+    end
+
+    context "#get_pixel" do
+      before :each do
+        subject.set_pixel(row: 5, col: 8, color: "Q")
+      end
+
+      it "will get color" do
+        expect(subject.image).to eql [
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "Q", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"]
+        ]
+        expect(subject.get_pixel(row: 5, col: 8)).to eql "Q"
+      end
+
+      it "errors on invalid row" do
+        expect { subject.get_pixel(row: 500, col: 8) }.to raise_error(ArgumentError)
+      end
+
+      it "errors on invalid col" do
+        expect { subject.get_pixel(row: 5, col: 800) }.to raise_error(ArgumentError)
+      end
+    end
+
+    context "#get_mates" do
+      it "will handle top left" do
+        expect(subject.get_mates(row: 0, col: 0)).to include([
+          {row: 0, col: 1},
+          {row: 1, col: 0},
+          {row: 1, col: 1}
+        ])
+        expect(subject.get_mates(row: 0, col: 0).count).to eql 3
+      end
+
+      it "will handle bottom right" do
+        expect(subject.get_mates(row: 9, col: 9)).to include([
+          {row: 8, col: 8},
+          {row: 8, col: 9},
+          {row: 9, col: 8}
+        ])
+        expect(subject.get_mates(row: 9, col: 9)).to eql 3
+      end
+
+      it "will handle in the middle" do
+        expect(subject.get_mates(row: 1, col: 1)).to include([
+          {row: 0, col: 0},
+          {row: 0, col: 1},
+          {row: 0, col: 2},
+          {row: 1, col: 0},
+          {row: 1, col: 2},
+          {row: 2, col: 0},
+          {row: 2, col: 1},
+          {row: 2, col: 2}
+        ])
+        expect(subject.get_mates(row: 1, col: 1)).to eql 8
+      end
+
+      it "will handle different color" do
+        expect(subject.get_mates(row: 3, col: 1)).to include([
+          {row: 2, col: 0},
+          {row: 1, col: 1},
+          {row: 1, col: 2},
+          {row: 3, col: 0},
+          {row: 3, col: 2}
+        ])
+        expect(subject.get_mates(row: 3, col: 1)).to eql 5
+      end
     end
   end
 end

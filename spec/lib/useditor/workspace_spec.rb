@@ -138,7 +138,22 @@ describe Useditor::Workspace do
         ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
         ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"]
       ]
+    end
 
+    it "can set a single pixel" do
+      subject.set_pixel(row: 5, col: 5, color: "P")
+      expect(subject.image).to eql [
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "P", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"]
+      ]
     end
   end
 end

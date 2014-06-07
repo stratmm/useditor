@@ -93,7 +93,7 @@ module Useditor
     def draw_horizontal(row: 0, start_col: 0, end_col: 0, color: "R")
       image.map!.with_index do |row_array, row_num|
         if row == row_num
-          row_array.map.with_index do |pixel, col_num| 
+          row_array.map.with_index do |pixel, col_num|
             if col_num >= start_col && col_num <= end_col
               color
             else
@@ -105,6 +105,14 @@ module Useditor
         end
       end
       self
+    end
+
+    # Set a single pixel to a specific color
+    #  @example
+    #    image.set_pixel(row: 5, col: 8, color: "B")
+    #  @return [Useditor::Workspace] the current workspace
+    def set_pixel(row: 0, col: 0, color: "R")
+      draw_horizontal(row: row, start_col: col, end_col: col, color: color)
     end
 
     private

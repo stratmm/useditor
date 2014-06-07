@@ -105,4 +105,40 @@ describe Useditor::Workspace do
 
     end
   end
+
+  context "manipulating an image" do
+    subject { Useditor::Workspace.new.create }
+    it "can draw vertical line" do
+      subject.draw_vertical(col: 2, start_row: 2, end_row: 10, color: "P")
+      expect(subject.image).to eql [
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "B", "B", "B", "B", "B", "B", "B"]
+      ]
+    end
+
+    it "can draw horizontal line" do
+      subject.draw_horizontal(row: 2, start_col: 2, end_col: 8, color: "P")
+      expect(subject.image).to eql [
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "P", "P", "P", "P", "P", "P", "P", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"],
+        ["B", "B", "B", "B", "B", "B", "B", "B", "B", "B"]
+      ]
+
+    end
+  end
 end

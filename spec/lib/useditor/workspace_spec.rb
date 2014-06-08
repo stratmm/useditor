@@ -209,17 +209,19 @@ describe Useditor::Workspace do
       end
 
       it "errors on invalid row" do
-        expect { subject.get_pixel(row: 500, col: 8) }.to raise_error(ArgumentError)
+        expect { subject.get_pixel(row: 500, col: 8) }.to raise_error(Useditor::Workspace::PixelLocationError)
+        expect { subject.get_pixel(row: -500, col: 8) }.to raise_error(Useditor::Workspace::PixelLocationError)
       end
 
       it "errors on invalid col" do
-        expect { subject.get_pixel(row: 5, col: 800) }.to raise_error(ArgumentError)
+        expect { subject.get_pixel(row: 5, col: 800) }.to raise_error(Useditor::Workspace::PixelLocationError)
+        expect { subject.get_pixel(row: 5, col: -800) }.to raise_error(Useditor::Workspace::PixelLocationError)
       end
     end
 
     context "#get_mates" do
       it "will handle top left" do
-        expect(subject.get_mates(row: 0, col: 0)).to include([
+        expect(subject.get_mates(row: 0, col: 0)).to eql([
           {row: 0, col: 1},
           {row: 1, col: 0},
           {row: 1, col: 1}
@@ -228,16 +230,16 @@ describe Useditor::Workspace do
       end
 
       it "will handle bottom right" do
-        expect(subject.get_mates(row: 9, col: 9)).to include([
+        expect(subject.get_mates(row: 9, col: 9)).to eql([
           {row: 8, col: 8},
           {row: 8, col: 9},
           {row: 9, col: 8}
         ])
-        expect(subject.get_mates(row: 9, col: 9)).to eql 3
+        #expect(subject.get_mates(row: 9, col: 9).count).to eql 3
       end
 
       it "will handle in the middle" do
-        expect(subject.get_mates(row: 1, col: 1)).to include([
+        expect(subject.get_mates(row: 1, col: 1)).to eql([
           {row: 0, col: 0},
           {row: 0, col: 1},
           {row: 0, col: 2},
@@ -247,19 +249,70 @@ describe Useditor::Workspace do
           {row: 2, col: 1},
           {row: 2, col: 2}
         ])
-        expect(subject.get_mates(row: 1, col: 1)).to eql 8
+        expect(subject.get_mates(row: 1, col: 1).count).to eql 8
       end
 
       it "will handle different color" do
-        expect(subject.get_mates(row: 3, col: 1)).to include([
+        expect(subject.get_mates(row: 3, col: 1)).to eql([
           {row: 2, col: 0},
-          {row: 1, col: 1},
-          {row: 1, col: 2},
+          {row: 2, col: 1},
+          {row: 2, col: 2},
           {row: 3, col: 0},
           {row: 3, col: 2}
         ])
-        expect(subject.get_mates(row: 3, col: 1)).to eql 5
+        expect(subject.get_mates(row: 3, col: 1).count).to eql 5
       end
+    end
+
+    context "#get_region" do
+      it "gets correct region" do
+        expect(subject.get_region(row: 1, col: 1)).to eql([
+        {:row=>1, :col=>1},
+        {:row=>0, :col=>0},
+        {:row=>0, :col=>1},
+        {:row=>0, :col=>2},
+        {:row=>0, :col=>3},
+        {:row=>1, :col=>2},
+        {:row=>1, :col=>3},
+        {:row=>2, :col=>2},
+        {:row=>2, :col=>1},
+        {:row=>1, :col=>0},
+        {:row=>2, :col=>0},
+        {:row=>3, :col=>0},
+        {:row=>3, :col=>1},
+        {:row=>3, :col=>2},
+        {:row=>2, :col=>3},
+        {:row=>3, :col=>3}
+        ])
+      end
+    end
+
+    context "#set_region" do
+      it "sets the colors of a region" do
+        subject.set_region(row: 1, col: 1, color: "U")
+        expect(subject.image).to eql [
+          ["U", "U", "U", "U", "X", "B", "B", "B", "B", "B"],
+          ["U", "U", "U", "U", "X", "B", "B", "B", "B", "B"],
+          ["U", "U", "U", "U", "X", "B", "B", "B", "B", "B"],
+          ["U", "U", "U", "U", "X", "B", "B", "B", "B", "B"],
+          ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
+          ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+          ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+          ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+          ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"],
+          ["B", "B", "B", "B", "X", "B", "B", "B", "B", "B"]
+        ]
+      end
+      it "errors on invalid row" do
+        expect { subject.set_region(row: -100, col: 1, color: "U") }.to raise_error(Useditor::Workspace::PixelLocationError)
+        expect { subject.set_region(row: 100, col: 1, color: "U") }.to raise_error(Useditor::Workspace::PixelLocationError)
+      end
+
+      it "errors on invalid col" do
+        expect { subject.set_region(row: 1, col: -100, color: "U") }.to raise_error(Useditor::Workspace::PixelLocationError)
+        expect { subject.set_region(row: 1, col: 100, color: "U") }.to raise_error(Useditor::Workspace::PixelLocationError)
+      end
+
     end
   end
 end

@@ -31,5 +31,5 @@ VOLUME ["/project"]
 RUN bundle install
 
 # Setup the entrypoint
-# CMD ["start", "-c", "web=8", "-p", "3000"]
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]
+ENTRYPOINT ["bundle", "exec"]

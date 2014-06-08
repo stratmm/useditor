@@ -62,7 +62,8 @@ module Useditor
     #
     #  @return [Useditor::Workspace] the current workspace
     def clear
-      create rows: @rows, cols: @cols, color: "W"
+      create rows: @rows, cols: @cols, color: "O"
+      save_state
     end
 
     # Draw a vertical line in col, starting at start_row and ending at end_row
@@ -82,6 +83,7 @@ module Useditor
           end
         end
       end
+      save_state
       self
     end
 
@@ -105,6 +107,7 @@ module Useditor
           row_array
         end
       end
+      save_state
       self
     end
 
@@ -114,6 +117,8 @@ module Useditor
     #  @return [Useditor::Workspace] the current workspace
     def set_pixel(row: 0, col: 0, color: "R")
       draw_horizontal(row: row, start_col: col, end_col: col, color: color)
+      save_state
+      self
     end
 
     # Get pixels that are adjacent to the target pixel and are of the same color
@@ -151,6 +156,8 @@ module Useditor
       region.each do |pixel|
         set_pixel(row: pixel[:row], col: pixel[:col], color: color)
       end
+      save_state
+      self
     end
 
     # Get all pixels that are adjacent to the target pixel and of the same color

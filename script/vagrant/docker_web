@@ -3,5 +3,5 @@ if [ "$#" == 0 ]
 then
   docker run --name=web_run --volume=/vagrant:/project --tty=true --interactive=true --detach=false --rm=true web
 else
-  docker run --name=web_run --volume=/vagrant:/project --tty=true --interactive=true --detach=false --rm=true web -c "$@"
+  docker run --name=web_run --volume=/vagrant:/project --tty=true --interactive=true --detach=false --rm=true --entrypoint="" web "$@"
 fi

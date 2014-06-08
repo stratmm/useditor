@@ -96,10 +96,10 @@ describe Useditor::Workspace do
       it "can be cleared to white" do
         subject.clear
         expect(subject.image).to eql [
-          ["W", "W", "W", "W"],
-          ["W", "W", "W", "W"],
-          ["W", "W", "W", "W"],
-          ["W", "W", "W", "W"]
+          ["O", "O", "O", "O"],
+          ["O", "O", "O", "O"],
+          ["O", "O", "O", "O"],
+          ["O", "O", "O", "O"]
         ]
       end
 

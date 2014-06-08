@@ -133,7 +133,17 @@ image.create(rows: 100, cols: 100, color: &quot;B&quot;)</code></pre>
   </div>
 
 
-</div>
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Workspace/PixelLocationError.html" title="Useditor::Workspace::PixelLocationError (class)">PixelLocationError</a></span>
+    
+  
+</p>
+
 
 
 
@@ -264,6 +274,30 @@ image.create(rows: 100, cols: 100, color: &quot;B&quot;)</code></pre>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#clear-instance_method" title="#clear (instance method)">- (Object) <strong>clear</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Clears the current image setting all pixels to W.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#create-instance_method" title="#create (instance method)">- (Object) <strong>create</strong>(rows: 10, cols: 10, color: &quot;B&quot;) </a>
     
 
@@ -280,6 +314,128 @@ image.create(rows: 100, cols: 100, color: &quot;B&quot;)</code></pre>
   
     <span class="summary_desc"><div class='inline'>
 <p>Create a new image, deleting any old workspace that might be around.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#draw_horizontal-instance_method" title="#draw_horizontal (instance method)">- (Object) <strong>draw_horizontal</strong>(row: 0, start_col: 0, end_col: 0, color: &quot;R&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Draw a horizontal in row, starting from start_col and ending at end_col in
+color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#draw_vertical-instance_method" title="#draw_vertical (instance method)">- (Object) <strong>draw_vertical</strong>(col: 0, start_row: 0, end_row: 0, color: &quot;R&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Draw a vertical line in col, starting at start_row and ending at end_row in
+color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_mates-instance_method" title="#get_mates (instance method)">- (Array) <strong>get_mates</strong>(row: 0, col: 0) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get all pixels that are adjacent to the target pixel and of the same color.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_pixel-instance_method" title="#get_pixel (instance method)">- (String) <strong>get_pixel</strong>(row: 0, col: 0, color: &quot;W&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get the color of a single pixle.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_region-instance_method" title="#get_region (instance method)">- (Array) <strong>get_region</strong>(row: 0, col: 0, region: []) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get pixels that are adjacent to the target pixel and are of the same color.</p>
 </div></span>
   
 </li>
@@ -311,6 +467,79 @@ image.create(rows: 100, cols: 100, color: &quot;B&quot;)</code></pre>
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#log_out-instance_method" title="#log_out (instance method)">- (Object) <strong>log_out</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Outputs the current image to the Log.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_pixel-instance_method" title="#set_pixel (instance method)">- (Object) <strong>set_pixel</strong>(row: 0, col: 0, color: &quot;R&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set a single pixel to a specific color  @example    image.set_pixel(row: 5,
+col: 8, color: “B”)  @return [Useditor::Workspace] the current workspace.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_region-instance_method" title="#set_region (instance method)">- (Useditor::Workspace) <strong>set_region</strong>(row: 0, col: 0, color: &quot;K&quot;) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets all the pixels of a region to a color.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -333,6 +562,8 @@ image.create(rows: 100, cols: 100, color: &quot;B&quot;)</code></pre>
 loaded in order to populate the class state.  if not an empty image is
 created.</p>
 
+<pre class="code ruby"><code class="ruby">@return [Useditor::Workspace] the new workspace</code></pre>
+
 
   </div>
 </div>
@@ -345,14 +576,14 @@ created.</p>
       <pre class="lines">
 
 
-19
-20
-21
-22
-23</pre>
+25
+26
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@state_file</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./workspace.json</span><span class='tstring_end'>&quot;</span></span>
@@ -397,12 +628,12 @@ created.</p>
       <pre class="lines">
 
 
-15
-16
-17</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cols'>cols</span>
   <span class='ivar'>@cols</span>
@@ -440,12 +671,12 @@ created.</p>
       <pre class="lines">
 
 
-15
-16
-17</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_image'>image</span>
   <span class='ivar'>@image</span>
@@ -483,12 +714,12 @@ created.</p>
       <pre class="lines">
 
 
-15
-16
-17</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rows'>rows</span>
   <span class='ivar'>@rows</span>
@@ -526,12 +757,12 @@ created.</p>
       <pre class="lines">
 
 
-15
-16
-17</pre>
+19
+20
+21</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 15</span>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_state_file'>state_file</span>
   <span class='ivar'>@state_file</span>
@@ -549,7 +780,52 @@ created.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="create-instance_method">
+  <h3 class="signature first" id="clear-instance_method">
+  
+    - (<tt>Object</tt>) <strong>clear</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Clears the current image setting all pixels to W</p>
+
+<pre class="code ruby"><code class="ruby">@return [Useditor::Workspace] the current workspace</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_create'>create</span> <span class='label'>rows:</span> <span class='ivar'>@rows</span><span class='comma'>,</span> <span class='label'>cols:</span> <span class='ivar'>@cols</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>O</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_save_state'>save_state</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create-instance_method">
   
     - (<tt>Object</tt>) <strong>create</strong>(rows: 10, cols: 10, color: &quot;B&quot;) 
   
@@ -561,6 +837,8 @@ created.</p>
   <div class="discussion">
     
 <p>Create a new image, deleting any old workspace that might be around</p>
+
+<pre class="code ruby"><code class="ruby">@return [Useditor::Workspace] the new workspace</code></pre>
 
 
   </div>
@@ -583,8 +861,8 @@ created.</p>
 <p>Creating a new empty image with an optional background color</p>
 </div></p>
       
-      <pre class="example code"><code>100x100 pixels of color B
-image = Useditor::Workspace.create(rows: 100, cols: 100, color: B)</code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_image'>image</span> <span class='op'>=</span> <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Workspace</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>rows:</span> <span class='int'>100</span><span class='comma'>,</span> <span class='label'>cols:</span> <span class='int'>100</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>B</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -595,20 +873,20 @@ image = Useditor::Workspace.create(rows: 100, cols: 100, color: B)</code></pre>
       <pre class="lines">
 
 
-34
-35
-36
-37
-38
-39
-40
-41
 42
 43
-44</pre>
+44
+45
+46
+47
+48
+49
+50
+51
+52</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 42</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='label'>rows:</span> <span class='int'>10</span><span class='comma'>,</span> <span class='label'>cols:</span> <span class='int'>10</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>B</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='id identifier rubyid_delete_state'>delete_state</span>
@@ -626,12 +904,629 @@ image = Useditor::Workspace.create(rows: 100, cols: 100, color: B)</code></pre>
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="draw_horizontal-instance_method">
+  
+    - (<tt>Object</tt>) <strong>draw_horizontal</strong>(row: 0, start_col: 0, end_col: 0, color: &quot;R&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Draw a horizontal in row, starting from start_col and ending at end_col in
+color</p>
+
+<pre class="code ruby"><code class="ruby">@example
+  image.draw_horizontal(row: 5, start_col: 4, end_col: 10, color: &quot;P&quot;)
+@return [Useditor::Workspace] the current workspace</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_draw_horizontal'>draw_horizontal</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>start_col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>end_col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>R</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span><span class='period'>.</span><span class='id identifier rubyid_with_index'>with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row_array'>row_array</span><span class='comma'>,</span> <span class='id identifier rubyid_row_num'>row_num</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>==</span> <span class='id identifier rubyid_row_num'>row_num</span>
+      <span class='id identifier rubyid_row_array'>row_array</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='period'>.</span><span class='id identifier rubyid_with_index'>with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pixel'>pixel</span><span class='comma'>,</span> <span class='id identifier rubyid_col_num'>col_num</span><span class='op'>|</span>
+        <span class='kw'>if</span> <span class='id identifier rubyid_col_num'>col_num</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_start_col'>start_col</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_col_num'>col_num</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_end_col'>end_col</span>
+          <span class='id identifier rubyid_color'>color</span>
+        <span class='kw'>else</span>
+          <span class='id identifier rubyid_pixel'>pixel</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_row_array'>row_array</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_save_state'>save_state</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="draw_vertical-instance_method">
+  
+    - (<tt>Object</tt>) <strong>draw_vertical</strong>(col: 0, start_row: 0, end_row: 0, color: &quot;R&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Draw a vertical line in col, starting at start_row and ending at end_row in
+color</p>
+
+<pre class="code ruby"><code class="ruby">@example
+  image = Useditor::Workspace.new
+  image.draw_vertical(col: 1, start_row: 5, end_row 8, color: &quot;B&quot;)
+@return [Useditor::Workspace] the current workspace</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_draw_vertical'>draw_vertical</span><span class='lparen'>(</span><span class='label'>col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>start_row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>end_row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>R</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_map!'>map!</span><span class='period'>.</span><span class='id identifier rubyid_with_index'>with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='id identifier rubyid_row_num'>row_num</span><span class='op'>|</span>
+    <span class='id identifier rubyid_row'>row</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='period'>.</span><span class='id identifier rubyid_with_index'>with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pixel'>pixel</span><span class='comma'>,</span> <span class='id identifier rubyid_col_num'>col_num</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_row_num'>row_num</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_start_row'>start_row</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_row_num'>row_num</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_end_row'>end_row</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='id identifier rubyid_col'>col</span> <span class='op'>==</span> <span class='id identifier rubyid_col_num'>col_num</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_color'>color</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_pixel'>pixel</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_save_state'>save_state</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_mates-instance_method">
+  
+    - (<tt>Array</tt>) <strong>get_mates</strong>(row: 0, col: 0) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get all pixels that are adjacent to the target pixel and of the same color</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_get_mates'>get_mates</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>5</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>5</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Return an array of all adjacent pixels of the same color</p>
+<dl class="rdoc-list label-list"><dt>1, col: 1, 1, col: 2, 2, col: 1
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 169</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_mates'>get_mates</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='id identifier rubyid_get_pixel'>get_pixel</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_col'>col</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_mates'>mates</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span> <span class='op'>-</span><span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row_num'>row_num</span><span class='op'>|</span>
+    <span class='lbracket'>[</span><span class='id identifier rubyid_col'>col</span> <span class='op'>-</span><span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span><span class='comma'>,</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_col_num'>col_num</span><span class='op'>|</span>
+      <span class='kw'>begin</span>
+        <span class='kw'>if</span> <span class='lparen'>(</span><span class='id identifier rubyid_row_num'>row_num</span> <span class='op'>==</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_col_num'>col_num</span> <span class='op'>==</span> <span class='id identifier rubyid_col'>col</span><span class='rparen'>)</span>
+          <span class='comment'># Skip this as it is our target pixel
+</span>        <span class='kw'>else</span>
+          <span class='comment'># This is a canidate for a mate so check color
+</span>          <span class='kw'>if</span> <span class='id identifier rubyid_color'>color</span> <span class='op'>==</span> <span class='id identifier rubyid_get_pixel'>get_pixel</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_row_num'>row_num</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_col_num'>col_num</span><span class='rparen'>)</span>
+            <span class='id identifier rubyid_mate'>mate</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>row:</span> <span class='id identifier rubyid_row_num'>row_num</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_col_num'>col_num</span><span class='rbrace'>}</span>
+            <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_mates'>mates</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_mate'>mate</span>
+              <span class='id identifier rubyid_mates'>mates</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_mate'>mate</span>
+            <span class='kw'>end</span>
+          <span class='kw'>end</span>
+        <span class='kw'>end</span>
+      <span class='kw'>rescue</span> <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Workspace</span><span class='op'>::</span><span class='const'>PixelLocationError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_mates'>mates</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_pixel-instance_method">
+  
+    - (<tt>String</tt>) <strong>get_pixel</strong>(row: 0, col: 0, color: &quot;W&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get the color of a single pixle</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_get_pixel'>get_pixel</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>5</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>6</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Q</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The pixel&#39;s color</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Workspace/PixelLocationError.html" title="Useditor::Workspace::PixelLocationError (class)">Useditor::Workspace::PixelLocationError</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199
+200
+201
+202
+203</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_pixel'>get_pixel</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>W</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Workspace</span><span class='op'>::</span><span class='const'>PixelLocationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Row out of bounds</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>&lt;</span> <span class='int'>0</span> <span class='op'>||</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='ivar'>@rows</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Workspace</span><span class='op'>::</span><span class='const'>PixelLocationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Col out of bounds</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>&lt;</span> <span class='int'>0</span> <span class='op'>||</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='ivar'>@cols</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='ivar'>@image</span><span class='lbracket'>[</span><span class='id identifier rubyid_row'>row</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_col'>col</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_region-instance_method">
+  
+    - (<tt>Array</tt>) <strong>get_region</strong>(row: 0, col: 0, region: []) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get pixels that are adjacent to the target pixel and are of the same color</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_get_region'>get_region</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>5</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>5</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Return an array of all pixels in the region</p>
+<dl class="rdoc-list label-list"><dt>1, col: 1, 1, col: 2, 2, col: 1
+<dd></dd></dl>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_region'>get_region</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>region:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='comment'># add the current pixel
+</span>  <span class='id identifier rubyid_region'>region</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span><span class='label'>row:</span> <span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_col'>col</span><span class='rbrace'>}</span>
+  <span class='comment'># Get all his mates
+</span>  <span class='id identifier rubyid_mates'>mates</span> <span class='op'>=</span> <span class='id identifier rubyid_get_mates'>get_mates</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_col'>col</span><span class='rparen'>)</span>
+  <span class='comment'># add in any mates that are not already there
+</span>  <span class='id identifier rubyid_mates'>mates</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_mate'>mate</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_region'>region</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_mate'>mate</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_get_region'>get_region</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_mate'>mate</span><span class='lbracket'>[</span><span class='symbol'>:row</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_mate'>mate</span><span class='lbracket'>[</span><span class='symbol'>:col</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>region:</span> <span class='id identifier rubyid_region'>region</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pixel'>pixel</span><span class='op'>|</span>
+        <span class='id identifier rubyid_region'>region</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_pixel'>pixel</span> <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_region'>region</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_pixel'>pixel</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_region'>region</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="log_out-instance_method">
+  
+    - (<tt>Object</tt>) <strong>log_out</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Outputs the current image to the Log</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_log_out'>log_out</span>
+  <span class='ivar'>@image</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row'>row</span><span class='op'>|</span>
+      <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Log</span><span class='period'>.</span><span class='id identifier rubyid_ok'>ok</span> <span class='id identifier rubyid_row'>row</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_pixel-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_pixel</strong>(row: 0, col: 0, color: &quot;R&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set a single pixel to a specific color</p>
+
+<pre class="code ruby"><code class="ruby">@example
+  image.set_pixel(row: 5, col: 8, color: &quot;B&quot;)
+@return [Useditor::Workspace] the current workspace</code></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_pixel'>set_pixel</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>R</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_draw_horizontal'>draw_horizontal</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='label'>start_col:</span> <span class='id identifier rubyid_col'>col</span><span class='comma'>,</span> <span class='label'>end_col:</span> <span class='id identifier rubyid_col'>col</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_save_state'>save_state</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_region-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Useditor::Workspace (class)">Useditor::Workspace</a></span></tt>) <strong>set_region</strong>(row: 0, col: 0, color: &quot;K&quot;) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets all the pixels of a region to a color</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_set_region'>set_region</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>1</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>1</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>X</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Useditor::Workspace (class)">Useditor::Workspace</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the current workspace</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Workspace/PixelLocationError.html" title="Useditor::Workspace::PixelLocationError (class)">Useditor::Workspace::PixelLocationError</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/useditor/workspace.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_set_region'>set_region</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>K</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Workspace</span><span class='op'>::</span><span class='const'>PixelLocationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Row out of bounds</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>&lt;</span> <span class='int'>0</span> <span class='op'>||</span> <span class='id identifier rubyid_row'>row</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='ivar'>@rows</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>Useditor</span><span class='op'>::</span><span class='const'>Workspace</span><span class='op'>::</span><span class='const'>PixelLocationError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Col out of bounds</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>&lt;</span> <span class='int'>0</span> <span class='op'>||</span> <span class='id identifier rubyid_col'>col</span> <span class='op'>&gt;</span> <span class='lparen'>(</span><span class='ivar'>@cols</span> <span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_region'>region</span> <span class='op'>=</span> <span class='id identifier rubyid_get_region'>get_region</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_row'>row</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_col'>col</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_region'>region</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pixel'>pixel</span><span class='op'>|</span>
+    <span class='id identifier rubyid_set_pixel'>set_pixel</span><span class='lparen'>(</span><span class='label'>row:</span> <span class='id identifier rubyid_pixel'>pixel</span><span class='lbracket'>[</span><span class='symbol'>:row</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>col:</span> <span class='id identifier rubyid_pixel'>pixel</span><span class='lbracket'>[</span><span class='symbol'>:col</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>color:</span> <span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_save_state'>save_state</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Thu Jun  5 23:17:59 2014 by
+  Generated on Sun Jun  8 21:45:14 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.0.0).
 </div>

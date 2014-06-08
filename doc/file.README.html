@@ -61,17 +61,99 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1>useditor</h1>
+    <div id="content"><div id='filecontents'><h1>Useditor</h1>
 
-<p>The gem enables you to set and read keys from a etcd cluster in a manner that is useful for setting environment variables in Docker containers.</p>
+<p><a href="https://codeclimate.com/github/stratmm/useditor"><img src="https://codeclimate.com/github/stratmm/useditor.png" alt="Code Climate"></a><a href="https://coveralls.io/r/stratmm/useditor"><img src="https://coveralls.io/repos/stratmm/useditor/badge.png" alt="Coverage Status"></a><a href="https://gemnasium.com/stratmm/useditor"><img src="https://gemnasium.com/stratmm/useditor.svg" alt="Dependency Status"></a></p>
 
-<h2>Installation</h2>
+<p>This gem is the submission for a technical test.  It provides a command line utility that demonstrates a small number of image handing concepts.  The setter of the test will be fully aware of the criteria.</p>
 
-<p>The Vagrantfile will build and provision a server to host etcd, <code>vagrant up</code> should create the development server</p>
+<h1>Vagrant / Docker based Development Environment</h1>
+
+<p>The development environment for this project is based on two key components:</p>
+
+<p>The project is hosted in a Virtual Box Vagrant VM.  The Vagrantfile provisions a vanilla Ubuntu 14.04 trusty host and installs Docker.</p>
+
+<p>Docker containers are used to run any supporting services and the development project itself.  This project was taken from one of my own larger systems and therefore contains all the plumbing to host service containers which would typically be systems like ElasticSearch, MYSQL and so on.  None of these are required here, therefore the only container is use is the Useditor gem itself.</p>
+
+<h2>Setting up the development environment</h2>
+
+<p>Ensure you have Vangrant and Virtual box installed with recent versions.</p>
+
+<p>Clone thos repo into a folder</p>
+
+<p>From that folder execute
+<code>
+vagrant up
+</code>
+On a MAC you might be asked for your password to connect the NFS share needed by the VM.</p>
+
+<p>Vagrant provision will do the following:
+* create the Vagrant VM
+* install docker
+* build the Useditor docker container.</p>
+
+<p>This process may take some time depending on your computer and internet connection; go make a coffee.</p>
+
+<h3>Accessing the VM</h3>
+
+<p>To use the VM you should
+<code>
+vagrant ssh
+sudo bash
+cd /vagrant
+</code></p>
+
+<p>All work on the development environment is done as root.</p>
+
+<h3>Developing</h3>
+
+<p>The project folder will be shared in the Vagrant machine as /vagrant.</p>
+
+<h3>Rebuilding the devlopment container</h3>
+
+<p>Changes to anything but source files (for instance: <code>bundle update</code>) will not be persisted when the development container terminates.  This is one of the key advantages of docker, in that your development environment always starts in a known state.  In these circumstances you must rebuild the development container to make the changes permanent.</p>
+
+<p>When in the VM, in the <code>/vagrant</code> folder and in a sudo shell
+<code>
+script/vagrant/docker_build
+</code></p>
+
+<h3>Running the development container</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_script'>script</span><span class='op'>/</span><span class='id identifier rubyid_vagrant'>vagrant</span><span class='op'>/</span><span class='id identifier rubyid_docker_web'>docker_web</span>
+</code></pre>
+
+<p>This will start the development container and present a command line with the full development environment in place.</p>
+
+<p>Running <code>rspec</code> will execute the test suite.</p>
+
+<p>The project folder on your host is also shared with the container, therefore source changes made on your host will immediatly be reflected in the container.</p>
+
+<h3>Running the finished product</h3>
+
+<p>The gem provides a command line utility called <code>bin/useditor</code></p>
+
+<p>This contains a full command line interface based on the Thor Gem and executing <code>bin/useditor help</code> will show the usage instructions and available commands.  running <code>bin/useditor help COMMAND</code> will show the detailed help for the particular command.</p>
+
+<p>In order to be compliant with the test the I have included a very hacky command input that complies with the notes on the test.
+<code>
+bin/useditor exe
+</code>
+This mode behaves as described in the tests.</p>
+
+<h3>zero based</h3>
+
+<p>I only noticed at the very last minute that all your command where based on the image &#39;array&#39; elements starting at 1 as opposed to being zero based.  The Thor based command line interface behaves in a zero based manner i.e. row 0 col 0 points to the top left pixel.</p>
+
+<p>All the command in the <code>exe</code> interface are 1 based therefore row 1 col 1 points to the top left pixel.</p>
+
+<h2>Documentation</h2>
+
+<p>All the code has been documented using YARD and the documentation site can be found at</p>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Jun  5 23:17:59 2014 by
+  Generated on Sun Jun  8 21:45:14 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.4 (ruby-2.0.0).
 </div>

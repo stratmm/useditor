@@ -77,4 +77,4 @@ I only noticed at the very last minute that all your commands where based on the
 All the command in the ```exe``` interface are 1 based therefore row 1 col 1 points to the top left pixel.
 
 ## Documentation
-All the code has been documented using YARD and the documentation site can be found at [useditor-docs.s3-website-eu-west-1.amazonaws.com](useditor-docs.s3-website-eu-west-1.amazonaws.com)
+All the code has been documented using YARD and the documentation site can be found at [http://useditor-docs.s3-website-eu-west-1.amazonaws.com](http://useditor-docs.s3-website-eu-west-1.amazonaws.com)

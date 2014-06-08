@@ -1,6 +1,6 @@
 # Useditor
 
-[![Code Climate](https://codeclimate.com/github/stratmm/useditor.png)](https://codeclimate.com/github/stratmm/useditor)[![Coverage Status](https://coveralls.io/repos/stratmm/useditor/badge.png)](https://coveralls.io/r/stratmm/useditor)[![Dependency Status](https://gemnasium.com/stratmm/useditor.svg)](https://gemnasium.com/stratmm/useditor)
+[![Coverage Status](https://coveralls.io/repos/stratmm/useditor/badge.png)](https://coveralls.io/r/stratmm/useditor)[![Dependency Status](https://gemnasium.com/stratmm/useditor.svg)](https://gemnasium.com/stratmm/useditor)[![Code Climate](https://codeclimate.com/github/stratmm/useditor.png)](https://codeclimate.com/github/stratmm/useditor)
 
 
 This gem is the submission for a technical test.  It provides a command line utility that demonstrates a small number of image handing concepts.  The setter of the test will be fully aware of the criteria.

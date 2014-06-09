@@ -74,7 +74,7 @@ This mode behaves as described in the test.
 ### zero based
 I only noticed at the very last minute that all your commands where based on the image 'array' elements starting at 1 as opposed to being zero based.  The Thor based command line interface behaves in a zero based manner i.e. row 0 col 0 points to the top left pixel.
 
-All the command in the ```exe``` interface are 1 based therefore row 1 col 1 points to the top left pixel.
+All the commands in the ```exe``` interface are 1 based therefore row 1 col 1 points to the top left pixel.
 
 ## Documentation
 All the code has been documented using YARD and the documentation site can be found at [http://useditor-docs.s3-website-eu-west-1.amazonaws.com](http://useditor-docs.s3-website-eu-west-1.amazonaws.com)

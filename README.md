@@ -10,12 +10,12 @@ The development environment for this project is based on two key components:
 
 The project is hosted in a Virtual Box Vagrant VM.  The Vagrantfile provisions a vanilla Ubuntu 14.04 trusty host and installs Docker.
 
-Docker containers are used to run any supporting services and the development project itself.  This project was taken from one of my own larger systems and therefore contains all the plumbing to host service containers which would typically be systems like ElasticSearch, MYSQL and so on.  None of these are required here, therefore the only container is use is the Useditor gem itself.
+Docker containers are used to run any supporting services and the development project itself.  This project was taken from one of my own larger systems and therefore contains all the plumbing to host service containers which would typically be systems like ElasticSearch, MYSQL and so on.  None of these are required here, therefore the only container is use in the Useditor gem itself.
 
 ## Setting up the development environment
 Ensure you have Vangrant and Virtual box installed with recent versions.
 
-Clone thos repo into a folder
+Clone this repo into a folder
 
 From that folder execute
 ```
@@ -23,7 +23,7 @@ vagrant up
 ```
 On a MAC you might be asked for your password to connect the NFS share needed by the VM.
 
-Vagrant provision will do the following:
+Vagrant provisions the following:
 * create the Vagrant VM
 * install docker
 * build the Useditor docker container.

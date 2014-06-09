@@ -65,7 +65,7 @@ The gem provides a command line utility called ```bin/useditor```
 
 This contains a full command line interface based on the Thor Gem and executing ```bin/useditor help``` will show the usage instructions and available commands.  running ```bin/useditor help COMMAND``` will show the detailed help for the particular command.
 
-In order to be compliant with the test the I have included a very hacky command input that complies with the notes on the test.
+In order to be compliant with the test I have included a very hacky command input that complies with the notes on the test.
 ```
 bin/useditor exe
 ```
